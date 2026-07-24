@@ -1,6 +1,6 @@
 {
-  "vendor": "vtex",
-  "name": "minimumtheme",
+  "vendor": "piercecommercepartnerar",
+  "name": "lfr",
   "version": "0.1.2",
   "builders": {
     "styles": "2.x",
