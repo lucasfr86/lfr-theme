@@ -1173,24 +1173,676 @@
   },
   "sticky-layout#mobile": {
     "title": "Container Header Layout Mobile",
-    "children": ["flex-layout.row#mobile"]
+    "children": [
+      "flex-layout.row#mobile", 
+      "flex-layout.row#mobile-search"]
   },
   "flex-layout.row#mobile": {
     "title": "Menu Header Row",
     "children": [
-      "drawer",
-      "logo",
-      "login",
-      "minicart.v2"
+      "flex-layout.col#drawer",
+      "flex-layout.col#logo",
+      "flex-layout.col#login",
+      "flex-layout.col#minicart"
     ],
     "props": {
       "blockClass": "main-header-mobile",
-      "preventHorizontalStretch": true,
+      "horizontalAlign": "center",
+      "verticalAlign": "center",
       "preserveLayoutOnMobile": true,
       "fullWidth": true
     }
   },
-  "drawer": {
-    "children": []
+  
+  "flex-layout.col#drawer":{
+    "children":[
+      "drawer#mobile-menu"
+    ],
+    "props": {
+      "width": "10%",
+      "horizontalAlign": "center",
+      "verticalAlign": "middle"
+    }
+  },
+  "flex-layout.col#logo":{
+    "children":[
+      "logo"
+    ],
+    "props": {
+      "width": "40%",
+      "horizontalAlign": "center",
+      "verticalAlign": "middle"
+    }
+  },
+  "flex-layout.col#login":{
+    "children":[
+      "login"
+    ],
+    "props": {
+      "width": "35%",
+      "horizontalAlign": "right",
+      "verticalAlign": "middle"
+    }
+  },
+  "flex-layout.col#minicart":{
+    "children":[
+      "minicart.v2"
+    ],
+    "props": {
+      "width": "15%",
+      "horizontalAlign": "center",
+      "verticalAlign": "middle"
+    }
+  },
+  "flex-layout.row#mobile-search":{
+    "children":[
+      "search-bar"
+    ],
+    "props": {
+      "blockClass": "main-header-mobile-search",
+      "horizontalAlign": "center",
+      "verticalAlign": "center",
+      "preserveLayoutOnMobile": true,
+      "fullWidth": true
+    }
+  },
+  
+
+  // =========================================================
+  // DRAWER MOBILE
+  // =========================================================
+
+  "drawer#mobile-menu": {
+    "title": "Drawer menú mobile",
+    "props": {
+      "maxWidth": "90%",
+      "slideDirection": "leftToRight",
+      "renderingStrategy": "lazy"
+    },
+    "blocks": [
+      "drawer-header#mobile-menu"
+    ],
+    "children": [
+      "vtex.menu@2.x:menu#mobile-navigation"
+    ]
+  },
+
+  "drawer-header#mobile-menu": {
+    "title": "Header drawer mobile",
+    "children": [
+      "flex-layout.row#mobile-drawer-header"
+    ]
+  },
+
+  "flex-layout.row#mobile-drawer-header": {
+    "title": "Header del menú mobile",
+    "props": {
+      "horizontalAlign": "between",
+      "verticalAlign": "center",
+      "fullWidth": true,
+      "paddingLeft": 4,
+      "paddingRight": 4,
+      "blockClass": "mobile-drawer-header"
+    },
+    "children": [
+      "drawer-close-button#mobile-menu"
+    ]
+  },
+
+  "drawer-close-button#mobile-menu": {
+    "props": {
+      "size": 24
+    }
+  },
+
+  // =========================================================
+  // NIVEL 1: DEPARTAMENTOS
+  // =========================================================
+
+  "vtex.menu@2.x:menu#mobile-navigation": {
+    "title": "Navegación mobile",
+    "props": {
+      "orientation": "vertical",
+      "blockClass": "mobile-navigation"
+    },
+    "children": [
+      "menu-item#mobile-cellphones",
+      "menu-item#mobile-electro",
+      "menu-item#mobile-games",
+      "menu-item#mobile-air-conditioners"
+    ]
+  },
+
+  // =========================================================
+  // DEPARTAMENTO: CELULARES
+  // =========================================================
+
+  "menu-item#mobile-cellphones": {
+    "title": "Celulares mobile",
+    "props": {
+      "id": "mobile-cellphones",
+      "type": "custom",
+      "highlight": false,
+      "onMountBehavior": "closed",
+      "iconPosition": "right",
+      "itemProps": {
+        "type": "internal",
+        "href": "#",
+        "noFollow": true,
+        "tagTitle": "Celulares",
+        "text": "Celulares"
+      }
+    },
+    "blocks": [
+      "vtex.menu@2.x:submenu#mobile-cellphones"
+    ]
+  },
+
+  "vtex.menu@2.x:submenu#mobile-cellphones": {
+    "title": "Categorías de Celulares",
+    "children": [
+      "vtex.menu@2.x:menu#mobile-cellphones-categories"
+    ]
+  },
+
+  "vtex.menu@2.x:menu#mobile-cellphones-categories": {
+    "title": "Menú categorías Celulares",
+    "props": {
+      "orientation": "vertical",
+      "blockClass": "mobile-categories"
+    },
+    "children": [
+      "menu-item#mobile-cellphones-smartphones",
+      "menu-item#mobile-cellphones-accessories",
+      "menu-item#mobile-cellphones-wearables"
+    ]
+  },
+
+  // Celulares > Smartphones
+
+  "menu-item#mobile-cellphones-smartphones": {
+    "title": "Smartphones mobile",
+    "props": {
+      "id": "mobile-cellphones-smartphones",
+      "type": "custom",
+      "highlight": false,
+      "onMountBehavior": "closed",
+      "iconPosition": "right",
+      "itemProps": {
+        "type": "internal",
+        "href": "#",
+        "noFollow": true,
+        "tagTitle": "Smartphones",
+        "text": "Smartphones"
+      }
+    },
+    "blocks": [
+      "vtex.menu@2.x:submenu#mobile-cellphones-smartphones"
+    ]
+  },
+
+  "vtex.menu@2.x:submenu#mobile-cellphones-smartphones": {
+    "children": [
+      "vtex.menu@2.x:menu#cellphones-smartphones-subcategories"
+    ]
+  },
+
+  // Celulares > Accesorios
+
+  "menu-item#mobile-cellphones-accessories": {
+    "title": "Accesorios mobile",
+    "props": {
+      "id": "mobile-cellphones-accessories",
+      "type": "custom",
+      "highlight": false,
+      "onMountBehavior": "closed",
+      "iconPosition": "right",
+      "itemProps": {
+        "type": "internal",
+        "href": "#",
+        "noFollow": true,
+        "tagTitle": "Accesorios",
+        "text": "Accesorios"
+      }
+    },
+    "blocks": [
+      "vtex.menu@2.x:submenu#mobile-cellphones-accessories"
+    ]
+  },
+
+  "vtex.menu@2.x:submenu#mobile-cellphones-accessories": {
+    "children": [
+      "vtex.menu@2.x:menu#cellphones-accessories-subcategories"
+    ]
+  },
+
+  // Celulares > Wearables
+
+  "menu-item#mobile-cellphones-wearables": {
+    "title": "Wearables mobile",
+    "props": {
+      "id": "mobile-cellphones-wearables",
+      "type": "custom",
+      "highlight": false,
+      "onMountBehavior": "closed",
+      "iconPosition": "right",
+      "itemProps": {
+        "type": "internal",
+        "href": "#",
+        "noFollow": true,
+        "tagTitle": "Wearables",
+        "text": "Wearables"
+      }
+    },
+    "blocks": [
+      "vtex.menu@2.x:submenu#mobile-cellphones-wearables"
+    ]
+  },
+
+  "vtex.menu@2.x:submenu#mobile-cellphones-wearables": {
+    "children": [
+      "vtex.menu@2.x:menu#cellphones-wearables-subcategories"
+    ]
+  },
+
+  // =========================================================
+  // DEPARTAMENTO: ELECTRO
+  // =========================================================
+
+  "menu-item#mobile-electro": {
+    "title": "Electro mobile",
+    "props": {
+      "id": "mobile-electro",
+      "type": "custom",
+      "highlight": false,
+      "onMountBehavior": "closed",
+      "iconPosition": "right",
+      "itemProps": {
+        "type": "internal",
+        "href": "#",
+        "noFollow": true,
+        "tagTitle": "Electro",
+        "text": "Electro"
+      }
+    },
+    "blocks": [
+      "vtex.menu@2.x:submenu#mobile-electro"
+    ]
+  },
+
+  "vtex.menu@2.x:submenu#mobile-electro": {
+    "title": "Categorías de Electro",
+    "children": [
+      "vtex.menu@2.x:menu#mobile-electro-categories"
+    ]
+  },
+
+  "vtex.menu@2.x:menu#mobile-electro-categories": {
+    "title": "Menú categorías Electro",
+    "props": {
+      "orientation": "vertical",
+      "blockClass": "mobile-categories"
+    },
+    "children": [
+      "menu-item#mobile-electro-tv-audio",
+      "menu-item#mobile-electro-kitchen",
+      "menu-item#mobile-electro-laundry"
+    ]
+  },
+
+  // Electro > TV y Audio
+
+  "menu-item#mobile-electro-tv-audio": {
+    "title": "TV y Audio mobile",
+    "props": {
+      "id": "mobile-electro-tv-audio",
+      "type": "custom",
+      "highlight": false,
+      "onMountBehavior": "closed",
+      "iconPosition": "right",
+      "itemProps": {
+        "type": "internal",
+        "href": "#",
+        "noFollow": true,
+        "tagTitle": "TV y Audio",
+        "text": "TV y Audio"
+      }
+    },
+    "blocks": [
+      "vtex.menu@2.x:submenu#mobile-electro-tv-audio"
+    ]
+  },
+
+  "vtex.menu@2.x:submenu#mobile-electro-tv-audio": {
+    "children": [
+      "vtex.menu@2.x:menu#electro-tv-audio-subcategories"
+    ]
+  },
+
+  // Electro > Cocina
+
+  "menu-item#mobile-electro-kitchen": {
+    "title": "Cocina mobile",
+    "props": {
+      "id": "mobile-electro-kitchen",
+      "type": "custom",
+      "highlight": false,
+      "onMountBehavior": "closed",
+      "iconPosition": "right",
+      "itemProps": {
+        "type": "internal",
+        "href": "#",
+        "noFollow": true,
+        "tagTitle": "Cocina",
+        "text": "Cocina"
+      }
+    },
+    "blocks": [
+      "vtex.menu@2.x:submenu#mobile-electro-kitchen"
+    ]
+  },
+
+  "vtex.menu@2.x:submenu#mobile-electro-kitchen": {
+    "children": [
+      "vtex.menu@2.x:menu#electro-kitchen-subcategories"
+    ]
+  },
+
+  // Electro > Lavado
+
+  "menu-item#mobile-electro-laundry": {
+    "title": "Lavado mobile",
+    "props": {
+      "id": "mobile-electro-laundry",
+      "type": "custom",
+      "highlight": false,
+      "onMountBehavior": "closed",
+      "iconPosition": "right",
+      "itemProps": {
+        "type": "internal",
+        "href": "#",
+        "noFollow": true,
+        "tagTitle": "Lavado",
+        "text": "Lavado"
+      }
+    },
+    "blocks": [
+      "vtex.menu@2.x:submenu#mobile-electro-laundry"
+    ]
+  },
+
+  "vtex.menu@2.x:submenu#mobile-electro-laundry": {
+    "children": [
+      "vtex.menu@2.x:menu#electro-laundry-subcategories"
+    ]
+  },
+
+  // =========================================================
+  // DEPARTAMENTO: JUEGOS
+  // =========================================================
+
+  "menu-item#mobile-games": {
+    "title": "Juegos mobile",
+    "props": {
+      "id": "mobile-games",
+      "type": "custom",
+      "highlight": false,
+      "onMountBehavior": "closed",
+      "iconPosition": "right",
+      "itemProps": {
+        "type": "internal",
+        "href": "#",
+        "noFollow": true,
+        "tagTitle": "Juegos",
+        "text": "Juegos"
+      }
+    },
+    "blocks": [
+      "vtex.menu@2.x:submenu#mobile-games"
+    ]
+  },
+
+  "vtex.menu@2.x:submenu#mobile-games": {
+    "title": "Categorías de Juegos",
+    "children": [
+      "vtex.menu@2.x:menu#mobile-games-categories"
+    ]
+  },
+
+  "vtex.menu@2.x:menu#mobile-games-categories": {
+    "title": "Menú categorías Juegos",
+    "props": {
+      "orientation": "vertical",
+      "blockClass": "mobile-categories"
+    },
+    "children": [
+      "menu-item#mobile-games-consoles",
+      "menu-item#mobile-games-videogames",
+      "menu-item#mobile-games-pc-gaming"
+    ]
+  },
+
+  // Juegos > Consolas
+
+  "menu-item#mobile-games-consoles": {
+    "title": "Consolas mobile",
+    "props": {
+      "id": "mobile-games-consoles",
+      "type": "custom",
+      "highlight": false,
+      "onMountBehavior": "closed",
+      "iconPosition": "right",
+      "itemProps": {
+        "type": "internal",
+        "href": "#",
+        "noFollow": true,
+        "tagTitle": "Consolas",
+        "text": "Consolas"
+      }
+    },
+    "blocks": [
+      "vtex.menu@2.x:submenu#mobile-games-consoles"
+    ]
+  },
+
+  "vtex.menu@2.x:submenu#mobile-games-consoles": {
+    "children": [
+      "vtex.menu@2.x:menu#games-consoles-subcategories"
+    ]
+  },
+
+  // Juegos > Videojuegos
+
+  "menu-item#mobile-games-videogames": {
+    "title": "Videojuegos mobile",
+    "props": {
+      "id": "mobile-games-videogames",
+      "type": "custom",
+      "highlight": false,
+      "onMountBehavior": "closed",
+      "iconPosition": "right",
+      "itemProps": {
+        "type": "internal",
+        "href": "#",
+        "noFollow": true,
+        "tagTitle": "Videojuegos",
+        "text": "Videojuegos"
+      }
+    },
+    "blocks": [
+      "vtex.menu@2.x:submenu#mobile-games-videogames"
+    ]
+  },
+
+  "vtex.menu@2.x:submenu#mobile-games-videogames": {
+    "children": [
+      "vtex.menu@2.x:menu#games-videogames-subcategories"
+    ]
+  },
+
+  // Juegos > Gaming PC
+
+  "menu-item#mobile-games-pc-gaming": {
+    "title": "Gaming PC mobile",
+    "props": {
+      "id": "mobile-games-pc-gaming",
+      "type": "custom",
+      "highlight": false,
+      "onMountBehavior": "closed",
+      "iconPosition": "right",
+      "itemProps": {
+        "type": "internal",
+        "href": "#",
+        "noFollow": true,
+        "tagTitle": "Gaming PC",
+        "text": "Gaming PC"
+      }
+    },
+    "blocks": [
+      "vtex.menu@2.x:submenu#mobile-games-pc-gaming"
+    ]
+  },
+
+  "vtex.menu@2.x:submenu#mobile-games-pc-gaming": {
+    "children": [
+      "vtex.menu@2.x:menu#games-pc-gaming-subcategories"
+    ]
+  },
+
+  // =========================================================
+  // DEPARTAMENTO: AIRES ACONDICIONADOS
+  // =========================================================
+
+  "menu-item#mobile-air-conditioners": {
+    "title": "Aires Acondicionados mobile",
+    "props": {
+      "id": "mobile-air-conditioners",
+      "type": "custom",
+      "highlight": false,
+      "onMountBehavior": "closed",
+      "iconPosition": "right",
+      "itemProps": {
+        "type": "internal",
+        "href": "#",
+        "noFollow": true,
+        "tagTitle": "Aires Acondicionados",
+        "text": "Aires Acondicionados"
+      }
+    },
+    "blocks": [
+      "vtex.menu@2.x:submenu#mobile-air-conditioners"
+    ]
+  },
+
+  "vtex.menu@2.x:submenu#mobile-air-conditioners": {
+    "title": "Categorías de Aires Acondicionados",
+    "children": [
+      "vtex.menu@2.x:menu#mobile-air-conditioners-categories"
+    ]
+  },
+
+  "vtex.menu@2.x:menu#mobile-air-conditioners-categories": {
+    "title": "Menú categorías Aires Acondicionados",
+    "props": {
+      "orientation": "vertical",
+      "blockClass": "mobile-categories"
+    },
+    "children": [
+      "menu-item#mobile-air-conditioners-split",
+      "menu-item#mobile-air-conditioners-portable",
+      "menu-item#mobile-air-conditioners-ventilation"
+    ]
+  },
+
+  // Aires Acondicionados > Split
+
+  "menu-item#mobile-air-conditioners-split": {
+    "title": "Split mobile",
+    "props": {
+      "id": "mobile-air-conditioners-split",
+      "type": "custom",
+      "highlight": false,
+      "onMountBehavior": "closed",
+      "iconPosition": "right",
+      "itemProps": {
+        "type": "internal",
+        "href": "#",
+        "noFollow": true,
+        "tagTitle": "Split",
+        "text": "Split"
+      }
+    },
+    "blocks": [
+      "vtex.menu@2.x:submenu#mobile-air-conditioners-split"
+    ]
+  },
+
+  "vtex.menu@2.x:submenu#mobile-air-conditioners-split": {
+    "children": [
+      "vtex.menu@2.x:menu#air-conditioners-split-subcategories"
+    ]
+  },
+
+  // Aires Acondicionados > Portátiles
+
+  "menu-item#mobile-air-conditioners-portable": {
+    "title": "Portátiles mobile",
+    "props": {
+      "id": "mobile-air-conditioners-portable",
+      "type": "custom",
+      "highlight": false,
+      "onMountBehavior": "closed",
+      "iconPosition": "right",
+      "itemProps": {
+        "type": "internal",
+        "href": "#",
+        "noFollow": true,
+        "tagTitle": "Portátiles",
+        "text": "Portátiles"
+      }
+    },
+    "blocks": [
+      "vtex.menu@2.x:submenu#mobile-air-conditioners-portable"
+    ]
+  },
+
+  "vtex.menu@2.x:submenu#mobile-air-conditioners-portable": {
+    "children": [
+      "vtex.menu@2.x:menu#air-conditioners-portable-subcategories"
+    ]
+  },
+
+  // Aires Acondicionados > Ventilación
+
+  "menu-item#mobile-air-conditioners-ventilation": {
+    "title": "Ventilación mobile",
+    "props": {
+      "id": "mobile-air-conditioners-ventilation",
+      "type": "custom",
+      "highlight": false,
+      "onMountBehavior": "closed",
+      "iconPosition": "right",
+      "itemProps": {
+        "type": "internal",
+        "href": "#",
+        "noFollow": true,
+        "tagTitle": "Ventilación",
+        "text": "Ventilación"
+      }
+    },
+    "blocks": [
+      "vtex.menu@2.x:submenu#mobile-air-conditioners-ventilation"
+    ]
+  },
+
+  "vtex.menu@2.x:submenu#mobile-air-conditioners-ventilation": {
+    "children": [
+      "vtex.menu@2.x:menu#air-conditioners-ventilation-subcategories"
+    ]
   }
+
+      
+      
+      
+      
 }

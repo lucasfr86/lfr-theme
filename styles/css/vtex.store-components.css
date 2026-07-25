@@ -13,3 +13,15 @@
 .searchIcon{
     color: #299d30;
 }
+
+
+
+@media screen and (max-width: 480px) {
+    .logoContainer {
+        padding-left: 0;
+        padding-right: 0;
+    }
+    .logoImage {
+        width: 140px;
+    }
+}

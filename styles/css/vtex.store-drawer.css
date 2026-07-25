@@ -1,0 +1,11 @@
+.openIconContainer {
+    padding: 5px 0 0 5px;
+}
+
+.drawerHeader{
+    flex-direction: row-reverse;    
+}
+
+.drawerContent  {
+    height: 100%;
+}
