@@ -1,0 +1,84 @@
+.styledLinkContainer {
+    padding: 10px 15px;
+    margin: 0;
+    border-right: 1px solid #299d30;
+    min-width: 135px;
+}
+.styledLinkContent {
+    justify-content: center;
+}
+
+.submenuWrapper{
+    padding: 0;
+    width: 100%;
+    border: 1px solid #299d30;
+}
+.submenuWrapper .submenu .menuContainerNav{
+    width: 100%;
+}
+
+.submenu .menuContainerNav .menuContainer{ 
+    flex-direction: column;
+    position: relative;
+}
+
+.submenu .menuContainerNav .menuContainer .menuItem {
+    margin: 0;
+    border-bottom: 1px solid #299d30;
+}
+
+.submenu .menuContainerNav .menuContainer .menuItem .styledLinkContainer{
+    border-right: none;
+    padding: 10px 15px;
+    text-align: center;
+}
+
+.submenu .menuContainerNav .menuContainer .menuItem .styledLinkContent {
+    justify-content: center;
+}
+
+
+.submenuContainer .menuItem .submenuContainer {
+    position: absolute;
+    top: -1px;
+    left: 100%;
+    width: 160px;
+}
+
+.submenuContainer .menuItem .submenuContainer .submenuWrapper{
+    background-color: #f1f1f1;
+}
+
+.submenuContainer .menuItem .submenuContainer .submenuWrapper .menuItem:hover{
+    background-color: #299d30;
+}
+
+.submenuContainer .menuItem .submenuContainer .submenuWrapper .menuItem:hover .styledLinkContent{
+    color: #fff;
+}
+
+
+.styledLinkContainer .menuItem--isOpen .styledLinkContent{
+    position: relative;
+}
+
+.menuItem--isOpen .submenuContainer .submenuWrapper--isOpen .menuItem--isOpen .styledLinkContainer{
+    position: relative;
+}
+.menuItem--isOpen .submenuContainer .submenuWrapper--isOpen .menuItem--isOpen .styledLinkContainer::after{
+    content: '';
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    transform: translateY(-50%);
+    border-top: 5px solid transparent;
+    border-bottom: 5px solid transparent;
+    border-left: 5px solid #299d30;    
+}
+
+.menuItem--isOpen .submenuContainer .submenuWrapper--isOpen .menuItem--isOpen .submenuContainer .submenuWrapper--isOpen .styledLinkContainer{
+    border: 0;
+}
+.menuItem--isOpen .submenuContainer .submenuWrapper--isOpen .menuItem--isOpen .submenuContainer .submenuWrapper--isOpen .styledLinkContainer::after{
+    display: none;
+}

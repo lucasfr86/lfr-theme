@@ -1,0 +1,29 @@
+.container :global(.vtex-button):hover,
+.container :global(.vtex-button):focus{
+    background-color: transparent;
+}
+.container :global(.vtex-button):hover .label{
+    color: #299d30;    
+}
+.container :global(.vtex-button__label){
+    padding: 0;
+}
+.label{
+    transition: all .2s;
+    font-size: 12px;
+    color: #3c3c65;
+    font-weight: 600;
+    padding: 0;
+    text-transform: none;
+}
+
+.profileIcon{
+    border: 1px solid #299d30;
+    padding: 7px;
+    border-radius: 50%;
+    color: #4ec0ca;
+}
+
+:global(.vtex-flex-layout-0-x-flexRowContent--main-header-desktop-items) :global(.items-stretch):last-child :global(.vtex-menu-2-x-styledLinkContainer){
+    border-right: none;
+}

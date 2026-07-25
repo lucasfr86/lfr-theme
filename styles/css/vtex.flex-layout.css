@@ -1,0 +1,12 @@
+
+.flexRow--main-header-desktop,
+.flexRow--main-header-desktop-items{
+    max-width: 76rem;
+    margin: 0 auto;
+}
+
+.flexCol--search {
+  flex: 1;
+  min-width: 0;
+}
+

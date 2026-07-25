@@ -1,0 +1,15 @@
+
+.minicartWrapperContainer :global(.vtex-button):hover,
+.minicartWrapperContainer :global(.vtex-button):focus{
+    background-color: transparent;
+}
+
+.openIconContainer{
+    padding: 0;
+}
+
+.cartIcon{
+    color: #299d30;
+    width: 24px;
+    height: 24px;
+}

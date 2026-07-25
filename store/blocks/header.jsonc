@@ -6,6 +6,7 @@
     "blocks": ["header-layout.desktop", "header-layout.mobile"]
   },
   "header-layout.desktop": {
+    "title": "Header Layout Desktop", 
     "children": [
       "sticky-layout#desktop"
     ]
@@ -14,32 +15,34 @@
     "props": {
       "blockClass": "sticky-header"
     },
-    "children": ["flex-layout.row#desktop"]
+    "children": [
+      "flex-layout.row#desktop",
+      "flex-layout.row#desktop-items"
+    ]
   },
+  
+  // Desktop Header
+  
   "flex-layout.row#desktop": {
+    "title": "Top Header Row", 
     "props": {
       "horizontalAlign": "center",
       "verticalAlign": "center",
-      "preventHorizontalStretch": true,
-      "preventVerticalStretch": true,
-      "fullWidth": true
+      "fullWidth": true,
+      "blockClass": "main-header-desktop"
     },
     "children": [
       "flex-layout.col#logo-desktop",
-      "flex-layout.col#spacer",
-      "search-bar",
-      "locale-switcher",
-      "login",
-      "minicart.v2"
+      "flex-layout.col#search-desktop",
+      "flex-layout.col#login-desktop",
+      "flex-layout.col#login-minicart-desktop"
     ]
-  },
-  "flex-layout.col#spacer": {
-    "props": {
-      "width": "grow"
-    }
   },
   "flex-layout.col#logo-desktop": {
     "props": {
+      "width": "13%",
+      "blockClass": "logo",
+      "horizontalAlign": "center",
       "verticalAlign": "middle"
     },
     "children": ["logo"]
@@ -48,21 +51,1135 @@
     "props": {
       "title": "Logo",
       "href": "/",
-      "url": "https://brand.vtex.com/static/media/VTEX_pink_RGB.751a9fb5.svg",
-      "width": "80"
+      "url": "https://storecomponents.vtexassets.com/arquivos/store-theme-logo.png",
+      "width": "120"
     }
   },
+  "flex-layout.col#search-desktop":{
+    "children": ["search-bar"],
+      "props": {
+        "blockClass": "search",
+        "width": "72%"
+      }
+  },
+  "flex-layout.col#login-desktop":{
+    "children": ["login"],
+    "props": {
+      "width": "10%",
+      "blockClass": "account",
+      "horizontalAlign": "center",
+      "verticalAlign": "middle"
+    }
+  },
+  "flex-layout.col#login-minicart-desktop":{
+    "children": ["minicart.v2"],
+    "props": { 
+      "width": "5%",
+      "blockClass": "minicart",
+      "horizontalAlign": "center",
+      "verticalAlign": "middle"
+    }
+  },
+
+  "login":{
+    "props": {
+      "iconLabel": "Iniciar sesión",
+      "showIconProfile": true,
+      "logInButtonBehavior": "link"
+    }
+  },
+
+  // Row items
+
+  "flex-layout.row#desktop-items": {
+    "title": "Menu Header Row",
+    "props": {
+      "horizontalAlign": "center",
+      "verticalAlign": "center",
+      "fullWidth": true,
+      "blockClass": "main-header-desktop-items",
+      "preventHorizontalStretch": true
+    },
+    "children": [
+      "vtex.menu@2.x:menu#main-navigation-1",
+      "vtex.menu@2.x:menu#main-navigation-2",
+      "vtex.menu@2.x:menu#main-navigation-3",
+      "vtex.menu@2.x:menu#main-navigation-4"
+    ]
+  },
+
+  // =========================================================
+  // DEPARTAMENTO: CELULARES
+  // =========================================================
+
+  "vtex.menu@2.x:menu#main-navigation-1": {
+    "title": "Menu Celulares",
+    "children": [
+      "menu-item#department-cellphones"
+    ]
+  },
+
+  "menu-item#department-cellphones": {
+    "title": "Departamento Celulares",
+    "props": {
+      "type": "custom",
+      "highlight": false,
+      "itemProps": {
+        "type": "internal",
+        "href": "/celulares",
+        "noFollow": false,
+        "tagTitle": "Celulares",
+        "text": "Celulares"
+      }
+    },
+    "blocks": [
+      "vtex.menu@2.x:submenu#cellphones"
+    ]
+  },
+
+  "vtex.menu@2.x:submenu#cellphones": {
+    "title": "Submenu Celulares",
+    "children": [
+      "vtex.menu@2.x:menu#cellphones-categories"
+    ]
+  },
+
+  "vtex.menu@2.x:menu#cellphones-categories": {
+    "title": "Categorías Celulares",
+    "children": [
+      "menu-item#cellphones-smartphones",
+      "menu-item#cellphones-accessories",
+      "menu-item#cellphones-wearables"
+    ]
+  },
+
+  // ---------------------------------------------------------
+  // CELULARES > SMARTPHONES
+  // ---------------------------------------------------------
+
+  "menu-item#cellphones-smartphones": {
+    "title": "Categoría Smartphones",
+    "props": {
+      "type": "custom",
+      "highlight": false,
+      "itemProps": {
+        "type": "internal",
+        "href": "/celulares/smartphones",
+        "noFollow": false,
+        "tagTitle": "Smartphones",
+        "text": "Smartphones"
+      }
+    },
+    "blocks": [
+      "vtex.menu@2.x:submenu#cellphones-smartphones"
+    ]
+  },
+
+  "vtex.menu@2.x:submenu#cellphones-smartphones": {
+    "title": "Submenu Smartphones",
+    "children": [
+      "vtex.menu@2.x:menu#cellphones-smartphones-subcategories"
+    ]
+  },
+
+  "vtex.menu@2.x:menu#cellphones-smartphones-subcategories": {
+    "title": "Subcategorías Smartphones",
+    "props": {
+      "items": [
+        {
+          "id": "cellphones-smartphones-android",
+          "type": "custom",
+          "highlight": false,
+          "itemProps": {
+            "type": "internal",
+            "href": "/celulares/smartphones/android",
+            "noFollow": false,
+            "tagTitle": "Celulares Android",
+            "text": "Android"
+          }
+        },
+        {
+          "id": "cellphones-smartphones-iphone",
+          "type": "custom",
+          "highlight": false,
+          "itemProps": {
+            "type": "internal",
+            "href": "/celulares/smartphones/iphone",
+            "noFollow": false,
+            "tagTitle": "iPhone",
+            "text": "iPhone"
+          }
+        },
+        {
+          "id": "cellphones-smartphones-foldable",
+          "type": "custom",
+          "highlight": false,
+          "itemProps": {
+            "type": "internal",
+            "href": "/celulares/smartphones/plegables",
+            "noFollow": false,
+            "tagTitle": "Celulares plegables",
+            "text": "Plegables"
+          }
+        }
+      ]
+    }
+  },
+
+  // ---------------------------------------------------------
+  // CELULARES > ACCESORIOS
+  // ---------------------------------------------------------
+
+  "menu-item#cellphones-accessories": {
+    "title": "Categoría Accesorios",
+    "props": {
+      "type": "custom",
+      "highlight": false,
+      "itemProps": {
+        "type": "internal",
+        "href": "/celulares/accesorios",
+        "noFollow": false,
+        "tagTitle": "Accesorios para celulares",
+        "text": "Accesorios"
+      }
+    },
+    "blocks": [
+      "vtex.menu@2.x:submenu#cellphones-accessories"
+    ]
+  },
+
+  "vtex.menu@2.x:submenu#cellphones-accessories": {
+    "title": "Submenu Accesorios",
+    "children": [
+      "vtex.menu@2.x:menu#cellphones-accessories-subcategories"
+    ]
+  },
+
+  "vtex.menu@2.x:menu#cellphones-accessories-subcategories": {
+    "title": "Subcategorías Accesorios",
+    "props": {
+      "items": [
+        {
+          "id": "cellphones-accessories-cases",
+          "type": "custom",
+          "highlight": false,
+          "itemProps": {
+            "type": "internal",
+            "href": "/celulares/accesorios/fundas",
+            "noFollow": false,
+            "tagTitle": "Fundas para celulares",
+            "text": "Fundas"
+          }
+        },
+        {
+          "id": "cellphones-accessories-chargers",
+          "type": "custom",
+          "highlight": false,
+          "itemProps": {
+            "type": "internal",
+            "href": "/celulares/accesorios/cargadores",
+            "noFollow": false,
+            "tagTitle": "Cargadores para celulares",
+            "text": "Cargadores"
+          }
+        },
+        {
+          "id": "cellphones-accessories-headphones",
+          "type": "custom",
+          "highlight": false,
+          "itemProps": {
+            "type": "internal",
+            "href": "/celulares/accesorios/auriculares",
+            "noFollow": false,
+            "tagTitle": "Auriculares para celulares",
+            "text": "Auriculares"
+          }
+        }
+      ]
+    }
+  },
+
+  // ---------------------------------------------------------
+  // CELULARES > WEARABLES
+  // ---------------------------------------------------------
+
+  "menu-item#cellphones-wearables": {
+    "title": "Categoría Wearables",
+    "props": {
+      "type": "custom",
+      "highlight": false,
+      "itemProps": {
+        "type": "internal",
+        "href": "/celulares/wearables",
+        "noFollow": false,
+        "tagTitle": "Wearables",
+        "text": "Wearables"
+      }
+    },
+    "blocks": [
+      "vtex.menu@2.x:submenu#cellphones-wearables"
+    ]
+  },
+
+  "vtex.menu@2.x:submenu#cellphones-wearables": {
+    "title": "Submenu Wearables",
+    "children": [
+      "vtex.menu@2.x:menu#cellphones-wearables-subcategories"
+    ]
+  },
+
+  "vtex.menu@2.x:menu#cellphones-wearables-subcategories": {
+    "title": "Subcategorías Wearables",
+    "props": {
+      "items": [
+        {
+          "id": "cellphones-wearables-smartwatches",
+          "type": "custom",
+          "highlight": false,
+          "itemProps": {
+            "type": "internal",
+            "href": "/celulares/wearables/smartwatches",
+            "noFollow": false,
+            "tagTitle": "Smartwatches",
+            "text": "Smartwatches"
+          }
+        },
+        {
+          "id": "cellphones-wearables-smartbands",
+          "type": "custom",
+          "highlight": false,
+          "itemProps": {
+            "type": "internal",
+            "href": "/celulares/wearables/smartbands",
+            "noFollow": false,
+            "tagTitle": "Smartbands",
+            "text": "Smartbands"
+          }
+        },
+        {
+          "id": "cellphones-wearables-gps",
+          "type": "custom",
+          "highlight": false,
+          "itemProps": {
+            "type": "internal",
+            "href": "/celulares/wearables/relojes-gps",
+            "noFollow": false,
+            "tagTitle": "Relojes con GPS",
+            "text": "Relojes con GPS"
+          }
+        }
+      ]
+    }
+  },
+
+  // =========================================================
+  // DEPARTAMENTO: ELECTRO
+  // =========================================================
+
+  "vtex.menu@2.x:menu#main-navigation-2": {
+    "title": "Menu Electro",
+    "children": [
+      "menu-item#department-electro"
+    ]
+  },
+
+  "menu-item#department-electro": {
+    "title": "Departamento Electro",
+    "props": {
+      "type": "custom",
+      "highlight": false,
+      "itemProps": {
+        "type": "internal",
+        "href": "/electro",
+        "noFollow": false,
+        "tagTitle": "Electro",
+        "text": "Electro"
+      }
+    },
+    "blocks": [
+      "vtex.menu@2.x:submenu#electro"
+    ]
+  },
+
+  "vtex.menu@2.x:submenu#electro": {
+    "title": "Submenu Electro",
+    "children": [
+      "vtex.menu@2.x:menu#electro-categories"
+    ]
+  },
+
+  "vtex.menu@2.x:menu#electro-categories": {
+    "title": "Categorías Electro",
+    "children": [
+      "menu-item#electro-tv-audio",
+      "menu-item#electro-kitchen",
+      "menu-item#electro-laundry"
+    ]
+  },
+
+  // ---------------------------------------------------------
+  // ELECTRO > TV Y AUDIO
+  // ---------------------------------------------------------
+
+  "menu-item#electro-tv-audio": {
+    "title": "Categoría TV y Audio",
+    "props": {
+      "type": "custom",
+      "highlight": false,
+      "itemProps": {
+        "type": "internal",
+        "href": "/electro/tv-y-audio",
+        "noFollow": false,
+        "tagTitle": "TV y Audio",
+        "text": "TV y Audio"
+      }
+    },
+    "blocks": [
+      "vtex.menu@2.x:submenu#electro-tv-audio"
+    ]
+  },
+
+  "vtex.menu@2.x:submenu#electro-tv-audio": {
+    "title": "Submenu TV y Audio",
+    "children": [
+      "vtex.menu@2.x:menu#electro-tv-audio-subcategories"
+    ]
+  },
+
+  "vtex.menu@2.x:menu#electro-tv-audio-subcategories": {
+    "title": "Subcategorías TV y Audio",
+    "props": {
+      "items": [
+        {
+          "id": "electro-tv-audio-smart-tv",
+          "type": "custom",
+          "highlight": false,
+          "itemProps": {
+            "type": "internal",
+            "href": "/electro/tv-y-audio/smart-tv",
+            "noFollow": false,
+            "tagTitle": "Smart TV",
+            "text": "Smart TV"
+          }
+        },
+        {
+          "id": "electro-tv-audio-soundbars",
+          "type": "custom",
+          "highlight": false,
+          "itemProps": {
+            "type": "internal",
+            "href": "/electro/tv-y-audio/barras-de-sonido",
+            "noFollow": false,
+            "tagTitle": "Barras de sonido",
+            "text": "Barras de sonido"
+          }
+        },
+        {
+          "id": "electro-tv-audio-speakers",
+          "type": "custom",
+          "highlight": false,
+          "itemProps": {
+            "type": "internal",
+            "href": "/electro/tv-y-audio/parlantes",
+            "noFollow": false,
+            "tagTitle": "Parlantes",
+            "text": "Parlantes"
+          }
+        }
+      ]
+    }
+  },
+
+  // ---------------------------------------------------------
+  // ELECTRO > COCINA
+  // ---------------------------------------------------------
+
+  "menu-item#electro-kitchen": {
+    "title": "Categoría Cocina",
+    "props": {
+      "type": "custom",
+      "highlight": false,
+      "itemProps": {
+        "type": "internal",
+        "href": "/electro/cocina",
+        "noFollow": false,
+        "tagTitle": "Electrodomésticos de cocina",
+        "text": "Cocina"
+      }
+    },
+    "blocks": [
+      "vtex.menu@2.x:submenu#electro-kitchen"
+    ]
+  },
+
+  "vtex.menu@2.x:submenu#electro-kitchen": {
+    "title": "Submenu Cocina",
+    "children": [
+      "vtex.menu@2.x:menu#electro-kitchen-subcategories"
+    ]
+  },
+
+  "vtex.menu@2.x:menu#electro-kitchen-subcategories": {
+    "title": "Subcategorías Cocina",
+    "props": {
+      "items": [
+        {
+          "id": "electro-kitchen-refrigerators",
+          "type": "custom",
+          "highlight": false,
+          "itemProps": {
+            "type": "internal",
+            "href": "/electro/cocina/heladeras",
+            "noFollow": false,
+            "tagTitle": "Heladeras",
+            "text": "Heladeras"
+          }
+        },
+        {
+          "id": "electro-kitchen-microwaves",
+          "type": "custom",
+          "highlight": false,
+          "itemProps": {
+            "type": "internal",
+            "href": "/electro/cocina/microondas",
+            "noFollow": false,
+            "tagTitle": "Microondas",
+            "text": "Microondas"
+          }
+        },
+        {
+          "id": "electro-kitchen-ovens",
+          "type": "custom",
+          "highlight": false,
+          "itemProps": {
+            "type": "internal",
+            "href": "/electro/cocina/hornos-electricos",
+            "noFollow": false,
+            "tagTitle": "Hornos eléctricos",
+            "text": "Hornos eléctricos"
+          }
+        }
+      ]
+    }
+  },
+
+  // ---------------------------------------------------------
+  // ELECTRO > LAVADO
+  // ---------------------------------------------------------
+
+  "menu-item#electro-laundry": {
+    "title": "Categoría Lavado",
+    "props": {
+      "type": "custom",
+      "highlight": false,
+      "itemProps": {
+        "type": "internal",
+        "href": "/electro/lavado",
+        "noFollow": false,
+        "tagTitle": "Lavado",
+        "text": "Lavado"
+      }
+    },
+    "blocks": [
+      "vtex.menu@2.x:submenu#electro-laundry"
+    ]
+  },
+
+  "vtex.menu@2.x:submenu#electro-laundry": {
+    "title": "Submenu Lavado",
+    "children": [
+      "vtex.menu@2.x:menu#electro-laundry-subcategories"
+    ]
+  },
+
+  "vtex.menu@2.x:menu#electro-laundry-subcategories": {
+    "title": "Subcategorías Lavado",
+    "props": {
+      "items": [
+        {
+          "id": "electro-laundry-washers",
+          "type": "custom",
+          "highlight": false,
+          "itemProps": {
+            "type": "internal",
+            "href": "/electro/lavado/lavarropas",
+            "noFollow": false,
+            "tagTitle": "Lavarropas",
+            "text": "Lavarropas"
+          }
+        },
+        {
+          "id": "electro-laundry-dryers",
+          "type": "custom",
+          "highlight": false,
+          "itemProps": {
+            "type": "internal",
+            "href": "/electro/lavado/secarropas",
+            "noFollow": false,
+            "tagTitle": "Secarropas",
+            "text": "Secarropas"
+          }
+        },
+        {
+          "id": "electro-laundry-dishwashers",
+          "type": "custom",
+          "highlight": false,
+          "itemProps": {
+            "type": "internal",
+            "href": "/electro/lavado/lavavajillas",
+            "noFollow": false,
+            "tagTitle": "Lavavajillas",
+            "text": "Lavavajillas"
+          }
+        }
+      ]
+    }
+  },
+
+  // =========================================================
+  // DEPARTAMENTO: JUEGOS
+  // =========================================================
+
+  "vtex.menu@2.x:menu#main-navigation-3": {
+    "title": "Menu Juegos",
+    "children": [
+      "menu-item#department-games"
+    ]
+  },
+
+  "menu-item#department-games": {
+    "title": "Departamento Juegos",
+    "props": {
+      "type": "custom",
+      "highlight": false,
+      "itemProps": {
+        "type": "internal",
+        "href": "/juegos",
+        "noFollow": false,
+        "tagTitle": "Juegos",
+        "text": "Juegos"
+      }
+    },
+    "blocks": [
+      "vtex.menu@2.x:submenu#games"
+    ]
+  },
+
+  "vtex.menu@2.x:submenu#games": {
+    "title": "Submenu Juegos",
+    "children": [
+      "vtex.menu@2.x:menu#games-categories"
+    ]
+  },
+
+  "vtex.menu@2.x:menu#games-categories": {
+    "title": "Categorías Juegos",
+    "children": [
+      "menu-item#games-consoles",
+      "menu-item#games-videogames",
+      "menu-item#games-pc-gaming"
+    ]
+  },
+
+  // ---------------------------------------------------------
+  // JUEGOS > CONSOLAS
+  // ---------------------------------------------------------
+
+  "menu-item#games-consoles": {
+    "title": "Categoría Consolas",
+    "props": {
+      "type": "custom",
+      "highlight": false,
+      "itemProps": {
+        "type": "internal",
+        "href": "/juegos/consolas",
+        "noFollow": false,
+        "tagTitle": "Consolas",
+        "text": "Consolas"
+      }
+    },
+    "blocks": [
+      "vtex.menu@2.x:submenu#games-consoles"
+    ]
+  },
+
+  "vtex.menu@2.x:submenu#games-consoles": {
+    "title": "Submenu Consolas",
+    "children": [
+      "vtex.menu@2.x:menu#games-consoles-subcategories"
+    ]
+  },
+
+  "vtex.menu@2.x:menu#games-consoles-subcategories": {
+    "title": "Subcategorías Consolas",
+    "props": {
+      "items": [
+        {
+          "id": "games-consoles-playstation",
+          "type": "custom",
+          "highlight": false,
+          "itemProps": {
+            "type": "internal",
+            "href": "/juegos/consolas/playstation",
+            "noFollow": false,
+            "tagTitle": "PlayStation",
+            "text": "PlayStation"
+          }
+        },
+        {
+          "id": "games-consoles-xbox",
+          "type": "custom",
+          "highlight": false,
+          "itemProps": {
+            "type": "internal",
+            "href": "/juegos/consolas/xbox",
+            "noFollow": false,
+            "tagTitle": "Xbox",
+            "text": "Xbox"
+          }
+        },
+        {
+          "id": "games-consoles-nintendo",
+          "type": "custom",
+          "highlight": false,
+          "itemProps": {
+            "type": "internal",
+            "href": "/juegos/consolas/nintendo-switch",
+            "noFollow": false,
+            "tagTitle": "Nintendo Switch",
+            "text": "Nintendo Switch"
+          }
+        }
+      ]
+    }
+  },
+
+  // ---------------------------------------------------------
+  // JUEGOS > VIDEOJUEGOS
+  // ---------------------------------------------------------
+
+  "menu-item#games-videogames": {
+    "title": "Categoría Videojuegos",
+    "props": {
+      "type": "custom",
+      "highlight": false,
+      "itemProps": {
+        "type": "internal",
+        "href": "/juegos/videojuegos",
+        "noFollow": false,
+        "tagTitle": "Videojuegos",
+        "text": "Videojuegos"
+      }
+    },
+    "blocks": [
+      "vtex.menu@2.x:submenu#games-videogames"
+    ]
+  },
+
+  "vtex.menu@2.x:submenu#games-videogames": {
+    "title": "Submenu Videojuegos",
+    "children": [
+      "vtex.menu@2.x:menu#games-videogames-subcategories"
+    ]
+  },
+
+  "vtex.menu@2.x:menu#games-videogames-subcategories": {
+    "title": "Subcategorías Videojuegos",
+    "props": {
+      "items": [
+        {
+          "id": "games-videogames-action",
+          "type": "custom",
+          "highlight": false,
+          "itemProps": {
+            "type": "internal",
+            "href": "/juegos/videojuegos/accion",
+            "noFollow": false,
+            "tagTitle": "Videojuegos de acción",
+            "text": "Acción"
+          }
+        },
+        {
+          "id": "games-videogames-sports",
+          "type": "custom",
+          "highlight": false,
+          "itemProps": {
+            "type": "internal",
+            "href": "/juegos/videojuegos/deportes",
+            "noFollow": false,
+            "tagTitle": "Videojuegos de deportes",
+            "text": "Deportes"
+          }
+        },
+        {
+          "id": "games-videogames-rpg",
+          "type": "custom",
+          "highlight": false,
+          "itemProps": {
+            "type": "internal",
+            "href": "/juegos/videojuegos/rpg",
+            "noFollow": false,
+            "tagTitle": "Videojuegos RPG",
+            "text": "RPG"
+          }
+        }
+      ]
+    }
+  },
+
+  // ---------------------------------------------------------
+  // JUEGOS > GAMING PC
+  // ---------------------------------------------------------
+
+  "menu-item#games-pc-gaming": {
+    "title": "Categoría Gaming PC",
+    "props": {
+      "type": "custom",
+      "highlight": false,
+      "itemProps": {
+        "type": "internal",
+        "href": "/juegos/gaming-pc",
+        "noFollow": false,
+        "tagTitle": "Gaming PC",
+        "text": "Gaming PC"
+      }
+    },
+    "blocks": [
+      "vtex.menu@2.x:submenu#games-pc-gaming"
+    ]
+  },
+
+  "vtex.menu@2.x:submenu#games-pc-gaming": {
+    "title": "Submenu Gaming PC",
+    "children": [
+      "vtex.menu@2.x:menu#games-pc-gaming-subcategories"
+    ]
+  },
+
+  "vtex.menu@2.x:menu#games-pc-gaming-subcategories": {
+    "title": "Subcategorías Gaming PC",
+    "props": {
+      "items": [
+        {
+          "id": "games-pc-gaming-computers",
+          "type": "custom",
+          "highlight": false,
+          "itemProps": {
+            "type": "internal",
+            "href": "/juegos/gaming-pc/computadoras-gamer",
+            "noFollow": false,
+            "tagTitle": "Computadoras gamer",
+            "text": "Computadoras gamer"
+          }
+        },
+        {
+          "id": "games-pc-gaming-components",
+          "type": "custom",
+          "highlight": false,
+          "itemProps": {
+            "type": "internal",
+            "href": "/juegos/gaming-pc/componentes",
+            "noFollow": false,
+            "tagTitle": "Componentes para PC",
+            "text": "Componentes"
+          }
+        },
+        {
+          "id": "games-pc-gaming-peripherals",
+          "type": "custom",
+          "highlight": false,
+          "itemProps": {
+            "type": "internal",
+            "href": "/juegos/gaming-pc/perifericos",
+            "noFollow": false,
+            "tagTitle": "Periféricos gamer",
+            "text": "Periféricos"
+          }
+        }
+      ]
+    }
+  },
+
+  // =========================================================
+  // DEPARTAMENTO: AIRES ACONDICIONADOS
+  // =========================================================
+
+  "vtex.menu@2.x:menu#main-navigation-4": {
+    "title": "Menu Aires Acondicionados",
+    "children": [
+      "menu-item#department-air-conditioners"
+    ]
+  },
+
+  "menu-item#department-air-conditioners": {
+    "title": "Departamento Aires Acondicionados",
+    "props": {
+      "type": "custom",
+      "highlight": false,
+      "itemProps": {
+        "type": "internal",
+        "href": "/aires-acondicionados",
+        "noFollow": false,
+        "tagTitle": "Aires Acondicionados",
+        "text": "Aires Acondicionados"
+      }
+    },
+    "blocks": [
+      "vtex.menu@2.x:submenu#air-conditioners"
+    ]
+  },
+
+  "vtex.menu@2.x:submenu#air-conditioners": {
+    "title": "Submenu Aires Acondicionados",
+    "children": [
+      "vtex.menu@2.x:menu#air-conditioners-categories"
+    ]
+  },
+
+  "vtex.menu@2.x:menu#air-conditioners-categories": {
+    "title": "Categorías Aires Acondicionados",
+    "children": [
+      "menu-item#air-conditioners-split",
+      "menu-item#air-conditioners-portable",
+      "menu-item#air-conditioners-ventilation"
+    ]
+  },
+
+  // ---------------------------------------------------------
+  // AIRES ACONDICIONADOS > SPLIT
+  // ---------------------------------------------------------
+
+  "menu-item#air-conditioners-split": {
+    "title": "Categoría Split",
+    "props": {
+      "type": "custom",
+      "highlight": false,
+      "itemProps": {
+        "type": "internal",
+        "href": "/aires-acondicionados/split",
+        "noFollow": false,
+        "tagTitle": "Aires acondicionados Split",
+        "text": "Split"
+      }
+    },
+    "blocks": [
+      "vtex.menu@2.x:submenu#air-conditioners-split"
+    ]
+  },
+
+  "vtex.menu@2.x:submenu#air-conditioners-split": {
+    "title": "Submenu Split",
+    "children": [
+      "vtex.menu@2.x:menu#air-conditioners-split-subcategories"
+    ]
+  },
+
+  "vtex.menu@2.x:menu#air-conditioners-split-subcategories": {
+    "title": "Subcategorías Split",
+    "props": {
+      "items": [
+        {
+          "id": "air-conditioners-split-cold-heat",
+          "type": "custom",
+          "highlight": false,
+          "itemProps": {
+            "type": "internal",
+            "href": "/aires-acondicionados/split/frio-calor",
+            "noFollow": false,
+            "tagTitle": "Aires Split frío calor",
+            "text": "Frío calor"
+          }
+        },
+        {
+          "id": "air-conditioners-split-inverter",
+          "type": "custom",
+          "highlight": false,
+          "itemProps": {
+            "type": "internal",
+            "href": "/aires-acondicionados/split/inverter",
+            "noFollow": false,
+            "tagTitle": "Aires Split Inverter",
+            "text": "Inverter"
+          }
+        },
+        {
+          "id": "air-conditioners-split-cold-only",
+          "type": "custom",
+          "highlight": false,
+          "itemProps": {
+            "type": "internal",
+            "href": "/aires-acondicionados/split/solo-frio",
+            "noFollow": false,
+            "tagTitle": "Aires Split solo frío",
+            "text": "Solo frío"
+          }
+        }
+      ]
+    }
+  },
+
+  // ---------------------------------------------------------
+  // AIRES ACONDICIONADOS > PORTÁTILES
+  // ---------------------------------------------------------
+
+  "menu-item#air-conditioners-portable": {
+    "title": "Categoría Portátiles",
+    "props": {
+      "type": "custom",
+      "highlight": false,
+      "itemProps": {
+        "type": "internal",
+        "href": "/aires-acondicionados/portatiles",
+        "noFollow": false,
+        "tagTitle": "Aires acondicionados portátiles",
+        "text": "Portátiles"
+      }
+    },
+    "blocks": [
+      "vtex.menu@2.x:submenu#air-conditioners-portable"
+    ]
+  },
+
+  "vtex.menu@2.x:submenu#air-conditioners-portable": {
+    "title": "Submenu Portátiles",
+    "children": [
+      "vtex.menu@2.x:menu#air-conditioners-portable-subcategories"
+    ]
+  },
+
+  "vtex.menu@2.x:menu#air-conditioners-portable-subcategories": {
+    "title": "Subcategorías Portátiles",
+    "props": {
+      "items": [
+        {
+          "id": "air-conditioners-portable-compact",
+          "type": "custom",
+          "highlight": false,
+          "itemProps": {
+            "type": "internal",
+            "href": "/aires-acondicionados/portatiles/compactos",
+            "noFollow": false,
+            "tagTitle": "Aires portátiles compactos",
+            "text": "Compactos"
+          }
+        },
+        {
+          "id": "air-conditioners-portable-cold-heat",
+          "type": "custom",
+          "highlight": false,
+          "itemProps": {
+            "type": "internal",
+            "href": "/aires-acondicionados/portatiles/frio-calor",
+            "noFollow": false,
+            "tagTitle": "Aires portátiles frío calor",
+            "text": "Frío calor"
+          }
+        },
+        {
+          "id": "air-conditioners-portable-high-power",
+          "type": "custom",
+          "highlight": false,
+          "itemProps": {
+            "type": "internal",
+            "href": "/aires-acondicionados/portatiles/alta-potencia",
+            "noFollow": false,
+            "tagTitle": "Aires portátiles de alta potencia",
+            "text": "Alta potencia"
+          }
+        }
+      ]
+    }
+  },
+
+  // ---------------------------------------------------------
+  // AIRES ACONDICIONADOS > VENTILACIÓN
+  // ---------------------------------------------------------
+
+  "menu-item#air-conditioners-ventilation": {
+    "title": "Categoría Ventilación",
+    "props": {
+      "type": "custom",
+      "highlight": false,
+      "itemProps": {
+        "type": "internal",
+        "href": "/aires-acondicionados/ventilacion",
+        "noFollow": false,
+        "tagTitle": "Ventilación",
+        "text": "Ventilación"
+      }
+    },
+    "blocks": [
+      "vtex.menu@2.x:submenu#air-conditioners-ventilation"
+    ]
+  },
+
+  "vtex.menu@2.x:submenu#air-conditioners-ventilation": {
+    "title": "Submenu Ventilación",
+    "children": [
+      "vtex.menu@2.x:menu#air-conditioners-ventilation-subcategories"
+    ]
+  },
+
+  "vtex.menu@2.x:menu#air-conditioners-ventilation-subcategories": {
+    "title": "Subcategorías Ventilación",
+    "props": {
+      "items": [
+        {
+          "id": "air-conditioners-ventilation-tower",
+          "type": "custom",
+          "highlight": false,
+          "itemProps": {
+            "type": "internal",
+            "href": "/aires-acondicionados/ventilacion/ventiladores-de-torre",
+            "noFollow": false,
+            "tagTitle": "Ventiladores de torre",
+            "text": "Ventiladores de torre"
+          }
+        },
+        {
+          "id": "air-conditioners-ventilation-ceiling",
+          "type": "custom",
+          "highlight": false,
+          "itemProps": {
+            "type": "internal",
+            "href": "/aires-acondicionados/ventilacion/ventiladores-de-techo",
+            "noFollow": false,
+            "tagTitle": "Ventiladores de techo",
+            "text": "Ventiladores de techo"
+          }
+        },
+        {
+          "id": "air-conditioners-ventilation-industrial",
+          "type": "custom",
+          "highlight": false,
+          "itemProps": {
+            "type": "internal",
+            "href": "/aires-acondicionados/ventilacion/ventiladores-industriales",
+            "noFollow": false,
+            "tagTitle": "Ventiladores industriales",
+            "text": "Ventiladores industriales"
+          }
+        }
+      ]
+    }
+  },
+
+  // Mobile Header
+
+
   "header-layout.mobile": {
+    "title": "Header Layout Mobile", 
     "children": ["sticky-layout#mobile"]
   },
   "sticky-layout#mobile": {
+    "title": "Container Header Layout Mobile",
     "children": ["flex-layout.row#mobile"]
   },
   "flex-layout.row#mobile": {
+    "title": "Menu Header Row",
     "children": [
       "drawer",
       "logo",
-      "flex-layout.col#spacer",
       "login",
       "minicart.v2"
     ],
