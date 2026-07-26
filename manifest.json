@@ -3,6 +3,7 @@
   "name": "lfr",
   "version": "0.1.2",
   "builders": {
+    "assets": "0.x",
     "styles": "2.x",
     "store": "0.x",
     "docs": "0.x"

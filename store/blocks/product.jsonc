@@ -113,10 +113,44 @@
       "flex-layout.row#buy-button",
       "availability-subscriber",
       //"shipping-simulator",
-      "lfr-shipping-simulator" 
+      "modal-trigger#shipping-calculator"
       //"share#default"
     ]
   },
+
+  "modal-trigger#shipping-calculator": {
+    "children": ["rich-text#shipping", "modal-layout#shipping"]
+  },
+  "rich-text#shipping": {
+    "props": {
+      "text": "Calcular costo de envio",
+      "blockClass": "shipping-trigger"
+    }
+  },
+  "modal-layout#shipping": {
+    "props": {
+      "blockClass": "shipping-calculator",
+      "scroll": "content"
+    },
+    "children": [
+      "modal-header#shipping-calculator",
+      "modal-content#shipping-calculator"
+    ]
+  },
+  "modal-header#shipping-calculator": {
+    "props": {
+      "blockClass": "shipping-calculator",
+      "showCloseButton": true,
+      "iconCloseSize": 22
+    }
+  },
+  "modal-content#shipping-calculator": {
+    "props": {
+      "blockClass": "shipping-calculator"
+    },
+    "children": ["lfr-shipping-simulator"]
+  },
+
 
   "flex-layout.row#product-name": {
     "props": {

@@ -29,3 +29,21 @@
     border-right: none;
 }
 
+
+:global(.piercecommercepartnerar-lfr-components-0-x-shippingButtonSpinner) {
+  display: inline-block;
+  box-sizing: border-box;
+  width: 16px;
+  height: 16px;
+  vertical-align: middle;
+  border: 2px solid rgba(32, 160, 47, 0.28);
+  border-top-color: #20a02f;
+  border-radius: 50%;
+  animation: shippingButtonSpin 0.7s linear infinite;
+}
+
+@keyframes shippingButtonSpin {
+  to {
+    transform: rotate(360deg);
+  }
+}

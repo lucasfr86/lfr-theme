@@ -1,0 +1,247 @@
+.shippingContainer {
+  width: min(630px, calc(100vw - 32px));
+  max-height: min(670px, calc(100vh - 48px));
+  overflow: hidden;
+  color: #111;
+  background: #fff;
+  border-radius: 7px;
+  font-family: "Lato", sans-serif;
+}
+
+.shippingHeader {
+  display: flex;
+  min-height: 61px;
+  align-items: center;
+  padding: 0 46px;
+  color: #fff;
+  background: #20a02f;
+}
+
+.shippingTitle {
+  font-size: 20px;
+  line-height: 1.2;
+}
+
+.shippingContent {
+  box-sizing: border-box;
+  max-height: calc(100vh - 109px);
+  padding: 17px 46px 28px;
+}
+
+.shippingForm {
+  margin: 0;
+}
+
+.shippingField {
+  display: block;
+}
+
+.shippingLabel {
+  display: block;
+  margin-bottom: 10px;
+  font-size: 15px;
+  font-weight: 700;
+}
+
+.shippingInputWrapper {
+  display: flex;
+  min-height: 37px;
+  overflow: hidden;
+  border: 1px solid #55ba63;
+  border-radius: 22px;
+}
+
+.shippingInput {
+  flex: 1;
+  min-width: 0;
+  padding: 0 20px;
+  color: #333;
+  background: transparent;
+  border: 0;
+  outline: 0;
+  font-size: 13px;
+}
+
+.shippingInput::placeholder {
+  color: #999;
+}
+
+.shippingButton {
+  padding: 0 28px;
+  color: #209d30;
+  background: transparent;
+  border: 0;
+  cursor: pointer;
+  font-size: 11px;
+  text-transform: uppercase;
+}
+
+.shippingButton:disabled {
+  cursor: not-allowed;
+  opacity: 0.55;
+}
+
+
+.shippingPostalCodeHelp {
+  display: block;
+  width: fit-content;
+  margin-top: 12px;
+  color: inherit;
+  font-size: 12px;
+  text-decoration: none;
+}
+
+.shippingPostalCodeHelp:hover {
+  text-decoration: underline;
+}
+
+.shippingMessage {
+  margin: 13px 0 0;
+  font-size: 12px;
+}
+
+.shippingResults {
+  margin-top: -1px;
+}
+
+.shippingTableHeader,
+.shippingOption {
+  display: grid;
+  grid-template-columns: minmax(210px, 1fr) 145px 85px;
+  column-gap: 14px;
+  align-items: center;
+}
+
+.shippingTableHeader {
+  padding: 10px 0 8px;
+  color: #333;
+  font-size: 12px;
+  text-transform: uppercase;
+}
+
+.shippingTableHeaderEstimate,
+.shippingTableHeaderPrice {
+  white-space: nowrap;
+}
+
+.shippingTableHeaderPrice,
+.shippingPrice {
+  text-align: right;
+}
+
+.shippingGroup {
+  position: relative;
+  margin-top: 5px;
+}
+
+.shippingGroupTitle {
+  position: relative;
+  margin: 0;
+  padding: 8px 40px 8px 0;
+  color: #1d9f2d;
+  font-size: 15px;
+}
+
+.shippingGroup::after {
+  position: absolute;
+  top: 6px;
+  right: 4px;
+  width: 24px;
+  color: #20a02f;
+  font-size: 22px;
+  font-weight: 400;
+  line-height: 1;
+  text-align: center;
+}
+
+.shippingGroupDelivery::after {
+  content: "";
+  width: 35px;
+  height: 35px;
+  background-color: #20a02f;
+  -webkit-mask: url("assets/icons/delivery-fast-shipping.svg")
+    center / contain no-repeat;
+  mask: url("assets/icons/delivery-fast-shipping.svg")
+    center / contain no-repeat;
+}
+
+.shippingGroupPickup::after {
+  content: "";
+  width: 24px;
+  height: 24px;
+  background-color: #20a02f;
+  -webkit-mask: url("assets/icons/store.svg")
+    center / contain no-repeat;
+  mask: url("assets/icons/store.svg")
+    center / contain no-repeat;
+}
+
+.shippingList {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+.shippingOption {
+  min-height: 47px;
+  border-bottom: 1px solid #ddd;
+  font-size: 12px;
+}
+
+.shippingOptionName {
+  overflow: hidden;
+  font-weight: 700;
+  text-overflow: ellipsis;
+}
+
+.shippingEstimate,
+.shippingPrice {
+  white-space: nowrap;
+}
+
+.shippingGroup{
+  border-bottom: 1px solid #1d9f2d;
+}
+
+@media (max-width: 640px) {
+  .shippingContainer {
+    width: unset;
+    position: relative;
+  }
+
+  .shippingHeader {
+    min-height: 54px;
+    padding: 0 24px;
+  }
+
+  .shippingTitle {
+    font-size: 15px;
+  }
+
+  .shippingContent {
+    padding: 18px;
+    width: 100%;
+  }
+
+  .shippingTableHeader,
+  .shippingOption {
+    grid-template-columns: minmax(0, 1fr) auto;
+    grid-auto-flow: column;
+  }
+
+  .shippingInputWrapper {
+    display: block;
+    border-radius: 7px;
+  }
+
+  .shippingInput,
+  .shippingButton {
+    box-sizing: border-box;
+    min-height: 38px;
+    padding: 0 0 0 15px;
+  }
+  .shippingButton {
+    padding: 0 15px;
+    font-size: 10px;
+  }
+}

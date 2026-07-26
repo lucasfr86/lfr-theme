@@ -1,0 +1,42 @@
+.paper--shipping-calculator {
+  position: relative;
+  padding: 0;
+  overflow: hidden;
+  border-radius: 10px;
+}
+
+.headerContainer--shipping-calculator {
+  position: absolute;
+  z-index: 2;
+  top: 0;
+  right: 0;
+  width: 60px;
+  height: 61px;
+  padding: 0;
+  border: 0;
+  pointer-events: none;
+}
+
+.closeButtonContainer--shipping-calculator {
+  width: 100%;
+  height: 100%;
+  align-items: center;
+  justify-content: center;
+  pointer-events: auto;
+}
+
+.closeButton--shipping-calculator {
+  color: #fff;
+  top: 50%;
+  transform: translateY(-50%);
+  position: absolute;
+}
+
+.contentContainer--shipping-calculator {
+  width: 100%;
+  padding: 0;
+}
+
+.contentScroll{
+  padding: 0;
+}
