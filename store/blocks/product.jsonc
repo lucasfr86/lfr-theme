@@ -104,6 +104,7 @@
       "flex-layout.row#list-price-savings",
       "flex-layout.row#selling-price",
       "product-installments",
+      "lfr-custom-installment#pdp",
       "product-separator",
       "product-identifier.product",
       "sku-selector",
@@ -116,6 +117,12 @@
       "modal-trigger#shipping-calculator"
       //"share#default"
     ]
+  },
+
+  "lfr-custom-installment#pdp": {
+    "props": {
+      "installments": 9
+    }
   },
 
   "modal-trigger#shipping-calculator": {

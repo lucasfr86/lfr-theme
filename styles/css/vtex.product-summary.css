@@ -1,0 +1,39 @@
+.container--plpCard {
+  height: 100%;
+  max-width: none;
+  padding: 0.75rem;
+  border: 1px solid #ececec;
+  border-radius: 0.5rem;
+  background: #fff;
+}
+
+.imageContainer--plpCard {
+  width: 100%;
+}
+
+.image--plpCard {
+  width: 100%;
+  object-fit: contain;
+}
+
+.nameContainer--plpCard {
+  justify-content: flex-start;
+  padding: 0.75rem 0 0.5rem;
+}
+
+.brandName--plpCard {
+  color: #222;
+  font-size: 0.9375rem;
+  font-weight: 500;
+  line-height: 1.35;
+}
+
+@media screen and (max-width: 40rem) {
+  .container--plpCard {
+    padding: 0.5rem;
+  }
+
+  .brandName--plpCard {
+    font-size: 0.8125rem;
+  }
+}
