@@ -1,10 +1,10 @@
-# Minimum Boilerplate Theme
+# LFR Theme
 
-The minimum Boilerplate Theme is basic store front model based on the VTEX IO Store Framework.
+The LFR Theme is basic store front model based on the VTEX IO Store Framework.
 
 It should be used only when you want to start a new store theme without any pre-set configurations, as is the case with [Store Theme](https://github.com/vtex-apps/store-theme). 
 
-While Store Theme gives developers a ready-to-go default store front structure, the Minimum Boilerplate Theme will enable you to build you store freely from scratch.
+While Store Theme gives developers a ready-to-go default store front structure, the LFR Theme will enable you to build you store freely from scratch.
 
 ## Configuration
 
@@ -14,7 +14,7 @@ Access the VTEX IO [basic setup guide](https://developers.vtex.com/docs/guides/v
 
 By the end of the setup, you should have the VTEX command line interface (Toolbelt) installed along with a developer workspace you can work in.
 
-### Step 2 - Cloning the Minimum Boilerplate Theme repository
+### Step 2 - Cloning the LFR Theme repository
 
 [Clone](https://help.github.com/en/github/creating-cloning-and-archiving-repositories/cloning-a-repository) this repository to your local files to be able to effectively start working on it.
 

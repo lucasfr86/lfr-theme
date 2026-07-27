@@ -1,0 +1,39 @@
+.gallery {
+  padding: 0;
+}
+
+.galleryItem {
+  padding: 0.5rem;
+}
+
+.filterMessage {
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+.filterTitleSpan,
+.filterItem {
+  color: #222;
+}
+
+.orderByButton {
+  border: 1px solid #d9d9d9;
+  border-radius: 0.25rem;
+}
+
+.buttonShowMore {
+  margin: 2rem 0;
+}
+
+.buttonShowMore :global(.vtex-button) {
+  min-width: 12rem;
+  border-color: #299d30;
+  background: #299d30;
+  color: #fff;
+}
+
+@media screen and (max-width: 40rem) {
+  .galleryItem {
+    padding: 0.25rem;
+  }
+}

@@ -1,0 +1,72 @@
+
+.flexRow--main-header-desktop,
+.flexRow--main-header-desktop-items{
+    max-width: 76rem;
+    margin: 0 auto;
+}
+
+.flexCol--search {
+  flex: 1;
+  min-width: 0;
+}
+
+.flexRow--plpBreadcrumb,
+.flexRow--plpTitle,
+.flexRow--plpMain,
+.flexRow--plpMobileControls,
+.flexRow--plpMobileTotal,
+.flexRow--plpNotFound {
+  max-width: 76rem;
+  margin-right: auto;
+  margin-left: auto;
+  padding-right: 1rem;
+  padding-left: 1rem;
+}
+
+.flexRow--plpTitle {
+  padding-top: 0.5rem;
+  padding-bottom: 1.5rem;
+}
+
+.flexRowContent--plpMain {
+  gap: 2rem;
+}
+
+.flexCol--plpFilters {
+  min-width: 14rem;
+}
+
+.flexCol--plpResults {
+  min-width: 0;
+}
+
+.flexRowContent--plpToolbar {
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+}
+
+.flexRowContent--plpMobileControls {
+  gap: 0.5rem;
+}
+
+.flexRow--plpMobileTotal {
+  padding-top: 0.75rem;
+  padding-bottom: 0.75rem;
+}
+
+@media screen and (max-width: 40rem) {
+  .flexRow--plpBreadcrumb,
+  .flexRow--plpTitle,
+  .flexRow--plpMobileControls,
+  .flexRow--plpMobileTotal,
+  .flexRow--plpNotFound {
+    padding-right: 0.75rem;
+    padding-left: 0.75rem;
+  }
+
+  .flexRow--plpTitle {
+    padding-bottom: 1rem;
+  }
+}
+
